@@ -1,0 +1,4 @@
+C:\Developements\DDD\DDD.Domain.Service\bin\Debug\DDD.Domain.Service.dll
+C:\Developements\DDD\DDD.Domain.Service\bin\Debug\DDD.Domain.Service.pdb
+C:\Developements\DDD\DDD.Domain.Service\obj\Debug\DDD.Domain.Service.dll
+C:\Developements\DDD\DDD.Domain.Service\obj\Debug\DDD.Domain.Service.pdb
