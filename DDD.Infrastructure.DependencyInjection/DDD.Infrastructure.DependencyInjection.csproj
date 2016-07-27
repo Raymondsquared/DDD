@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>48a5e368-b4f9-46df-b00c-a47ba274127d</ProjectGuid>
+    <ProjectGuid>{48A5E368-B4F9-46DF-B00C-A47BA274127D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DDD.Infrastructure.DependencyInjection</RootNamespace>
@@ -30,24 +30,50 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="InfrastructureModule.cs" />
+    <Compile Include="DomainModule.cs" />
+    <Compile Include="ApplicationModule.cs" />
+    <Compile Include="MainModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DDD.Application\DDD.Application.csproj">
+      <Project>{466e65e8-c3f2-46af-b4de-b9fe4bfbb2e4}</Project>
+      <Name>DDD.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDD.Domain.Model\DDD.Domain.Model.csproj">
+      <Project>{45A57709-D1C3-40B2-A49B-25F334130838}</Project>
+      <Name>DDD.Domain.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDD.Domain.Service\DDD.Domain.Service.csproj">
+      <Project>{f5838502-a6d5-406a-ba4a-226b9ca32ef5}</Project>
+      <Name>DDD.Domain.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDD.Infrastructure.CrossCutting\DDD.Infrastructure.CrossCutting.csproj">
+      <Project>{b4bb715e-5cee-468f-85cd-56f0a62aca35}</Project>
+      <Name>DDD.Infrastructure.CrossCutting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDD.Infrastructure\DDD.Infrastructure.csproj">
+      <Project>{daea9d90-30a8-4a9e-8375-c9391a9645a2}</Project>
+      <Name>DDD.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -57,5 +83,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-
- </Project>
+</Project>

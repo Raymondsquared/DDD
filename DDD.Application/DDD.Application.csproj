@@ -41,10 +41,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Abstractions\IConsoleApplicationService.cs" />
+    <Compile Include="Services\Abstractions\IApplicationService.cs" />
+    <Compile Include="Services\Implementations\ConsoleApplicationService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="Services\" />
+    <Folder Include="Abstractions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DDD.Domain.Model\DDD.Domain.Model.csproj">
+      <Project>{45A57709-D1C3-40B2-A49B-25F334130838}</Project>
+      <Name>DDD.Domain.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDD.Infrastructure.CrossCutting\DDD.Infrastructure.CrossCutting.csproj">
+      <Project>{B4BB715E-5CEE-468F-85CD-56F0A62ACA35}</Project>
+      <Name>DDD.Infrastructure.CrossCutting</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

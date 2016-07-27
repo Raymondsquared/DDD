@@ -2,3 +2,8 @@ C:\Developements\DDD\DDD.Domain.Model\bin\Debug\DDD.Domain.Model.dll
 C:\Developements\DDD\DDD.Domain.Model\bin\Debug\DDD.Domain.Model.pdb
 C:\Developements\DDD\DDD.Domain.Model\obj\Debug\DDD.Domain.Model.dll
 C:\Developements\DDD\DDD.Domain.Model\obj\Debug\DDD.Domain.Model.pdb
+C:\development\DDD\DDD.Domain.Model\bin\Debug\DDD.Domain.Model.dll
+C:\development\DDD\DDD.Domain.Model\bin\Debug\DDD.Domain.Model.pdb
+C:\development\DDD\DDD.Domain.Model\obj\Debug\DDD.Domain.Model.csprojResolveAssemblyReference.cache
+C:\development\DDD\DDD.Domain.Model\obj\Debug\DDD.Domain.Model.dll
+C:\development\DDD\DDD.Domain.Model\obj\Debug\DDD.Domain.Model.pdb
