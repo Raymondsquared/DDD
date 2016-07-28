@@ -42,6 +42,7 @@
       <HintPath>..\packages\Csn.Logging.NLog3.5.0.0\lib\net46\Csn.Logging.NLog3.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=4.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -74,6 +75,13 @@
     <Compile Include="Delegates\SimpleDelegate.cs" />
     <Compile Include="Extensions\ListExtenstion.cs" />
     <Compile Include="Abstractions\IDomainService.cs" />
+    <Compile Include="Helpers\AzureStorageTableHelper.cs" />
+    <Compile Include="Mappers\Abstractions\IMapper.cs" />
+    <Compile Include="Mappers\Abstractions\IMapperResolver.cs" />
+    <Compile Include="Mappers\Abstractions\IClientUserMapper.cs" />
+    <Compile Include="Mappers\Implementations\ClientUser\Resolvers\LastNameResolver.cs" />
+    <Compile Include="Mappers\Implementations\ClientUser\Resolvers\FirstNameResolver.cs" />
+    <Compile Include="Mappers\Implementations\ClientUser\ClientUserMapper.cs" />
     <Compile Include="Models\Log.cs" />
     <Compile Include="Models\BatchConfig.cs" />
     <Compile Include="Models\RetryConfig.cs" />
@@ -95,14 +103,24 @@
     <Compile Include="Retries\Implementations\SimpleRetryStrategy.cs" />
     <Compile Include="Serialisers\JsonSerialiser.cs" />
     <Compile Include="Serialisers\XmlSerializer.cs" />
+    <Compile Include="Validators\Abstractions\IClientValidator.cs" />
+    <Compile Include="Validators\Abstractions\IValidationChecker.cs" />
+    <Compile Include="Validators\Abstractions\IValidator.cs" />
+    <Compile Include="Validators\Implementations\Clients\Checkers\SurnameChecker.cs" />
+    <Compile Include="Validators\Implementations\Clients\Checkers\FirstNameChecker.cs" />
+    <Compile Include="Validators\Implementations\Clients\ClientValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Exceptions\" />
-    <Folder Include="Mappers\" />
-    <Folder Include="Validators\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DDD.Domain.Model\DDD.Domain.Model.csproj">
+      <Project>{45A57709-D1C3-40B2-A49B-25F334130838}</Project>
+      <Name>DDD.Domain.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

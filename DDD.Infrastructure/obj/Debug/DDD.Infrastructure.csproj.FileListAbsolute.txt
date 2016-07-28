@@ -19,3 +19,7 @@ C:\development\DDD\DDD.Infrastructure\bin\Debug\DDD.Infrastructure.CrossCutting.
 C:\development\DDD\DDD.Infrastructure\bin\Debug\Csn.Logging.pdb
 C:\development\DDD\DDD.Infrastructure\bin\Debug\Ninject.xml
 C:\development\DDD\DDD.Infrastructure\bin\Debug\Newtonsoft.Json.xml
+C:\development\DDD\DDD.Infrastructure\bin\Debug\Microsoft.WindowsAzure.Storage.dll
+C:\development\DDD\DDD.Infrastructure\bin\Debug\Microsoft.Data.Edm.dll
+C:\development\DDD\DDD.Infrastructure\bin\Debug\Microsoft.Data.Services.Client.dll
+C:\development\DDD\DDD.Infrastructure\bin\Debug\Microsoft.Data.OData.dll

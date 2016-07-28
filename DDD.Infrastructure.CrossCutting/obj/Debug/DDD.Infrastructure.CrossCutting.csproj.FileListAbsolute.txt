@@ -34,3 +34,9 @@ C:\development\DDD\DDD.Infrastructure.CrossCutting\bin\Debug\NLog.Extended.xml
 C:\development\DDD\DDD.Infrastructure.CrossCutting\obj\Debug\DDD.Infrastructure.CrossCutting.csprojResolveAssemblyReference.cache
 C:\development\DDD\DDD.Infrastructure.CrossCutting\obj\Debug\DDD.Infrastructure.CrossCutting.dll
 C:\development\DDD\DDD.Infrastructure.CrossCutting\obj\Debug\DDD.Infrastructure.CrossCutting.pdb
+C:\development\DDD\DDD.Infrastructure.CrossCutting\bin\Debug\Microsoft.WindowsAzure.Storage.dll
+C:\development\DDD\DDD.Infrastructure.CrossCutting\bin\Debug\Microsoft.Data.Edm.dll
+C:\development\DDD\DDD.Infrastructure.CrossCutting\bin\Debug\Microsoft.Data.Services.Client.dll
+C:\development\DDD\DDD.Infrastructure.CrossCutting\bin\Debug\Microsoft.Data.OData.dll
+C:\development\DDD\DDD.Infrastructure.CrossCutting\bin\Debug\DDD.Domain.Model.dll
+C:\development\DDD\DDD.Infrastructure.CrossCutting\bin\Debug\DDD.Domain.Model.pdb

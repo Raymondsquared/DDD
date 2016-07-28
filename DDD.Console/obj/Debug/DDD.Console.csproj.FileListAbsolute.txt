@@ -25,3 +25,8 @@ C:\development\DDD\DDD.Console\bin\Debug\DDD.Infrastructure.dll
 C:\development\DDD\DDD.Console\bin\Debug\DDD.Domain.Service.dll
 C:\development\DDD\DDD.Console\bin\Debug\DDD.Infrastructure.pdb
 C:\development\DDD\DDD.Console\bin\Debug\DDD.Domain.Service.pdb
+C:\development\DDD\DDD.Console\bin\Debug\Microsoft.WindowsAzure.Storage.dll
+C:\development\DDD\DDD.Console\bin\Debug\Microsoft.Data.Edm.dll
+C:\development\DDD\DDD.Console\bin\Debug\Microsoft.Data.Services.Client.dll
+C:\development\DDD\DDD.Console\bin\Debug\Microsoft.Data.OData.dll
+C:\development\DDD\DDD.Console\obj\Debug\DDD.Console.csproj.DDD.Console.exe.config

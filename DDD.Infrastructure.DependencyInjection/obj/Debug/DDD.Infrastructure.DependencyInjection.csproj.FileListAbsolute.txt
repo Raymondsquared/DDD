@@ -26,3 +26,7 @@ C:\development\DDD\DDD.Infrastructure.DependencyInjection\bin\Debug\DDD.Infrastr
 C:\development\DDD\DDD.Infrastructure.DependencyInjection\bin\Debug\DDD.Domain.Model.pdb
 C:\development\DDD\DDD.Infrastructure.DependencyInjection\bin\Debug\DDD.Domain.Service.pdb
 C:\development\DDD\DDD.Infrastructure.DependencyInjection\bin\Debug\DDD.Infrastructure.pdb
+C:\development\DDD\DDD.Infrastructure.DependencyInjection\bin\Debug\Microsoft.WindowsAzure.Storage.dll
+C:\development\DDD\DDD.Infrastructure.DependencyInjection\bin\Debug\Microsoft.Data.Edm.dll
+C:\development\DDD\DDD.Infrastructure.DependencyInjection\bin\Debug\Microsoft.Data.Services.Client.dll
+C:\development\DDD\DDD.Infrastructure.DependencyInjection\bin\Debug\Microsoft.Data.OData.dll
