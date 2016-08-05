@@ -21,7 +21,7 @@ namespace DDD.Infrastructure.Mock
             return _collection;
         }
 
-        public async Task<User> SelectAsync()
+        public async Task<User> SelectAsync(long id)
         {
             return _collection.LastOrDefault();
         }
@@ -49,6 +49,18 @@ namespace DDD.Infrastructure.Mock
             foreach (var input in inputCollection)
             {
                 _collection.Add(input);
+            }
+        }
+
+        public async Task PutAsync(User input)
+        {
+            var user = _collection.First(u => u.Id == input.Id);
+
+            if (user != null)
+            {
+                user.FirstName = input.FirstName;
+                user.LastName = input.LastName;
+                user.ExternalId = input.ExternalId;
             }
         }
     }

@@ -25,7 +25,7 @@ namespace DDD.Infrastructure.Mock
             return _collection;
         }
 
-        public async Task<ClientDto> SelectAsync()
+        public async Task<ClientDto> SelectAsync(long id)
         {
             return _collection.LastOrDefault();
         }
@@ -42,5 +42,17 @@ namespace DDD.Infrastructure.Mock
                 _collection.Add(input);
             }
         }
+
+        public async Task PutAsync(ClientDto input)
+        {
+            var client = _collection.First(c => c.Id == input.Id);
+
+            if (client != null)
+            {
+                client.FirstName = input.FirstName;
+                client.Surname = input.Surname;
+            }
+        }
     }
 }
+

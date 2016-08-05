@@ -5,10 +5,10 @@ using DDD.Application.Implementation;
 using DDD.Application.Services.Abstractions;
 using DDD.Application.Services.Implementations;
 using DDD.Infrastructure.CrossCutting;
+using DDD.Infrastructure.CrossCutting.Abstractions;
 using DDD.Infrastructure.CrossCutting.Helpers;
 using DDD.Infrastructure.CrossCutting.Models.Configurations;
-using DDD.Infrastructure.CrossCutting.Retries.Abstractions;
-using DDD.Infrastructure.CrossCutting.Retries.Implementations;
+using DDD.Infrastructure.CrossCutting.Retries;
 
 namespace DDD.Infrastructure.DependencyInjection
 {
@@ -26,14 +26,15 @@ namespace DDD.Infrastructure.DependencyInjection
                 Size = ConfigHelper.LoadOrDefault("Batch.Size", Constants.Defaults.Retry.Maximum)
             };
             
-            builder.RegisterInstance(batchConfig).As<BatchConfiguration>();
+            builder.RegisterInstance(batchConfig)
+                .As<BatchConfiguration>();
 
             /* Retry Strategies */
             builder.RegisterType<SimpleRetryStrategy>()
                 .As<IRetryStrategy>()
                 .WithParameter("retryConfig", retryConfig)
-                .Keyed<IRetryStrategy>("simple");
-            
+                .Keyed<IRetryStrategy>("simple");                
+
             /* Service */
             builder.RegisterType<LogService>()
                 .As<ILogService>();

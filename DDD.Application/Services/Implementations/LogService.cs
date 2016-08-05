@@ -20,9 +20,9 @@ namespace DDD.Application.Services.Implementations
             return await _userRepository.SelectAllAsync();
         }
 
-        public async Task<Log> GetAsync()
+        public async Task<Log> GetAsync(long id)
         {
-            return await _userRepository.SelectAsync();
+            return await _userRepository.SelectAsync(id);
         }
 
         public async Task PostAsync(Log input)

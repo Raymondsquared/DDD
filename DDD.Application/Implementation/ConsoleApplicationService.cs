@@ -12,7 +12,6 @@ using DDD.Infrastructure.CrossCutting.Delegates;
 using DDD.Infrastructure.CrossCutting.Extensions;
 using DDD.Infrastructure.CrossCutting.Models;
 using DDD.Infrastructure.CrossCutting.Models.Configurations;
-using DDD.Infrastructure.CrossCutting.Retries.Abstractions;
 
 namespace DDD.Application.Implementation
 {
@@ -28,24 +27,26 @@ namespace DDD.Application.Implementation
 
         private readonly IValidator<ClientDto> _clientValidator;
         private readonly IMapper<ClientDto, User> _userMapper;
+        
 
         public ConsoleApplicationService (
             BatchConfiguration batchConfig,
             IRetryStrategy retryStrategy,
+            IValidator<ClientDto> clientValidator,
+            IMapper<ClientDto, User> userMapper,
             ILogService logService,
             IDomainService<ClientDto> clientService,
-            IDomainService<User> userService,
-            IValidator<ClientDto> clientValidator,
-            IMapper<ClientDto, User> userMapper
+            IDomainService<User> userService
         )
         {
             _batchConfig = batchConfig;
             _retryStrategy = retryStrategy;
+            _clientValidator = clientValidator;
+            _userMapper = userMapper;
+
             _logService = logService;
             _clientService = clientService;
             _userService = userService;
-            _clientValidator = clientValidator;
-            _userMapper = userMapper;
         }
 
         public async Task RunWithRetryAsync()
@@ -130,7 +131,7 @@ namespace DDD.Application.Implementation
             if (users.Any())
             {
                 await _userService.PostManyAsync(users);
-            }
+            }            
         }
     }
 }

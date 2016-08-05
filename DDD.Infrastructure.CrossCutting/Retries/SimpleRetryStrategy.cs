@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
+using DDD.Infrastructure.CrossCutting.Abstractions;
 using DDD.Infrastructure.CrossCutting.Delegates;
 using DDD.Infrastructure.CrossCutting.Models.Configurations;
-using DDD.Infrastructure.CrossCutting.Retries.Abstractions;
 
-namespace DDD.Infrastructure.CrossCutting.Retries.Implementations
+namespace DDD.Infrastructure.CrossCutting.Retries
 {
     public class SimpleRetryStrategy : IRetryStrategy
     {

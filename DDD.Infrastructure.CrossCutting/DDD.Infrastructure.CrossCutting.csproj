@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstractions\IRepository.cs" />
+    <Compile Include="Abstractions\IIntegrationStrategy.cs" />
     <Compile Include="Delegates\SimpleDelegate.cs" />
     <Compile Include="Exceptions\CustomException.cs" />
     <Compile Include="Extensions\ListExtenstion.cs" />
@@ -102,8 +103,8 @@
     <Compile Include="Abstractions\ILogging.cs" />
     <Compile Include="Abstractions\ISerialiser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Retries\Abstractions\IRetryStrategy.cs" />
-    <Compile Include="Retries\Implementations\SimpleRetryStrategy.cs" />
+    <Compile Include="Abstractions\IRetryStrategy.cs" />
+    <Compile Include="Retries\SimpleRetryStrategy.cs" />
     <Compile Include="Serialisers\JsonSerialiser.cs" />
     <Compile Include="Serialisers\XmlSerializer.cs" />
     <Compile Include="Validators\Abstractions\IClientValidator.cs" />

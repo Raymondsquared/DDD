@@ -20,7 +20,7 @@ namespace DDD.Infrastructure.Mock
             return _collection;
         }
 
-        public async Task<Log> SelectAsync()
+        public async Task<Log> SelectAsync(long id)
         {
             return _collection.LastOrDefault();
         }
@@ -31,6 +31,11 @@ namespace DDD.Infrastructure.Mock
         }
 
         public async Task InsertManyAsync(IEnumerable<Log> inputCollection)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task PutAsync(Log input)
         {
             throw new System.NotImplementedException();
         }

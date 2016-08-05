@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using DDD.Domain.Model;
 using DDD.Domain.Model.DTOs;
+using DDD.Infrastructure.Bus;
 using DDD.Infrastructure.CrossCutting.Abstractions;
 using DDD.Infrastructure.CrossCutting.Mappers.Abstractions.DataSyncWorker.Mappers.Abstractions;
 using DDD.Infrastructure.CrossCutting.Mappers.Implementations.ClientUser;
@@ -17,7 +18,6 @@ namespace DDD.Infrastructure.DependencyInjection
     {
         protected override void Load(ContainerBuilder builder)
         {
-
             /* Validators */
             builder.RegisterType<FirstNameChecker>()
                 .As<IValidationChecker<ClientDto>>();
@@ -40,15 +40,23 @@ namespace DDD.Infrastructure.DependencyInjection
             builder.RegisterType<ClientUserMapper>()
                 .As<IMapper<ClientDto, User>>();
 
+            /* Bus */
+            builder.RegisterType<MessagingQueue>()
+                .As<IIntegrationStrategy>()
+                .SingleInstance();
+
             /* Repositories */
             builder.RegisterType<MockLogRepository>()
-                .As<IRepository<Log>>();
-            
+                .As<IRepository<Log>>()
+                .SingleInstance();
+
             builder.RegisterType<MockClientRepository>()
-                .As<IRepository<ClientDto>>();
+                .As<IRepository<ClientDto>>()
+                .SingleInstance();
 
             builder.RegisterType<MockUserRepository>()
-                .As<IRepository<User>>();
+                .As<IRepository<User>>()
+                .SingleInstance();
         }
     }
 }

@@ -20,9 +20,9 @@ namespace DDD.Domain.Service.Implementations
             return await _clientRepository.SelectAllAsync();
         }
 
-        public async Task<ClientDto> GetAsync()
+        public async Task<ClientDto> GetAsync(long id)
         {
-            return await _clientRepository.SelectAsync();
+            return await _clientRepository.SelectAsync(id);
         }
 
         public async Task PostAsync(ClientDto input)
@@ -33,6 +33,11 @@ namespace DDD.Domain.Service.Implementations
         public async Task PostManyAsync(IEnumerable<ClientDto> input)
         {
             await _clientRepository.InsertManyAsync(input);
+        }
+
+        public async Task PutAsync(ClientDto input)
+        {
+            await _clientRepository.InsertAsync(input);
         }
     }
 }
