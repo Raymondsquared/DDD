@@ -19,5 +19,20 @@ namespace DDD.Domain.Service.Implementations
         {
             return await _userRepository.SelectAllAsync();
         }
+
+        public async Task<User> GetAsync()
+        {
+            return await _userRepository.SelectAsync();
+        }
+
+        public async Task PostAsync(User input)
+        {
+            await _userRepository.InsertAsync(input);
+        }
+
+        public async Task PostManyAsync(IEnumerable<User> input)
+        {
+            await _userRepository.InsertManyAsync(input);
+        }
     }
 }

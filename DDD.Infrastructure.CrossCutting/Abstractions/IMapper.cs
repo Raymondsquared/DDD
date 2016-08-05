@@ -1,4 +1,4 @@
-﻿namespace DDD.Infrastructure.CrossCutting.Mappers.Abstractions
+﻿namespace DDD.Infrastructure.CrossCutting.Abstractions
 {
     public interface IMapper<in TInput, out TOutput>
     {

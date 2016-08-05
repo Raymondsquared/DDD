@@ -73,18 +73,21 @@
   <ItemGroup>
     <Compile Include="Abstractions\IRepository.cs" />
     <Compile Include="Delegates\SimpleDelegate.cs" />
+    <Compile Include="Exceptions\CustomException.cs" />
     <Compile Include="Extensions\ListExtenstion.cs" />
     <Compile Include="Abstractions\IDomainService.cs" />
     <Compile Include="Helpers\AzureStorageTableHelper.cs" />
-    <Compile Include="Mappers\Abstractions\IMapper.cs" />
+    <Compile Include="Abstractions\IMapper.cs" />
     <Compile Include="Mappers\Abstractions\IMapperResolver.cs" />
     <Compile Include="Mappers\Abstractions\IClientUserMapper.cs" />
+    <Compile Include="Mappers\Implementations\ClientUser\Resolvers\IdResolver.cs" />
+    <Compile Include="Mappers\Implementations\ClientUser\Resolvers\ExternalIdResolver.cs" />
     <Compile Include="Mappers\Implementations\ClientUser\Resolvers\LastNameResolver.cs" />
     <Compile Include="Mappers\Implementations\ClientUser\Resolvers\FirstNameResolver.cs" />
     <Compile Include="Mappers\Implementations\ClientUser\ClientUserMapper.cs" />
     <Compile Include="Models\Log.cs" />
-    <Compile Include="Models\BatchConfig.cs" />
-    <Compile Include="Models\RetryConfig.cs" />
+    <Compile Include="Models\Configurations\BatchConfiguration.cs" />
+    <Compile Include="Models\Configurations\RetryConfiguration.cs" />
     <Compile Include="Attributes\UniqueAttribute.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Helpers\CachingHelper.cs" />
@@ -96,8 +99,8 @@
     <Compile Include="Helpers\NinjectHelper.cs" />
     <Compile Include="Helpers\SmtpClientHelper.cs" />
     <Compile Include="Helpers\SqlDataReaderHelper.cs" />
-    <Compile Include="Interfaces\ILogging.cs" />
-    <Compile Include="Interfaces\ISerialiser.cs" />
+    <Compile Include="Abstractions\ILogging.cs" />
+    <Compile Include="Abstractions\ISerialiser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Retries\Abstractions\IRetryStrategy.cs" />
     <Compile Include="Retries\Implementations\SimpleRetryStrategy.cs" />
@@ -105,13 +108,13 @@
     <Compile Include="Serialisers\XmlSerializer.cs" />
     <Compile Include="Validators\Abstractions\IClientValidator.cs" />
     <Compile Include="Validators\Abstractions\IValidationChecker.cs" />
-    <Compile Include="Validators\Abstractions\IValidator.cs" />
+    <Compile Include="Abstractions\IValidator.cs" />
     <Compile Include="Validators\Implementations\Clients\Checkers\SurnameChecker.cs" />
     <Compile Include="Validators\Implementations\Clients\Checkers\FirstNameChecker.cs" />
     <Compile Include="Validators\Implementations\Clients\ClientValidator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Exceptions\" />
+    <Folder Include="Interfaces\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

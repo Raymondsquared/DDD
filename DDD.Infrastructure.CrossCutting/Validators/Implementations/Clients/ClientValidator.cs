@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using DDD.Domain.Model.DTOs;
+using DDD.Infrastructure.CrossCutting.Abstractions;
 using DDD.Infrastructure.CrossCutting.Validators.Abstractions;
 
 namespace DDD.Infrastructure.CrossCutting.Validators.Implementations.Clients

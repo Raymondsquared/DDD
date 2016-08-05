@@ -3,7 +3,7 @@ using System.IO;
 using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
-using DDD.Infrastructure.CrossCutting.Interfaces;
+using DDD.Infrastructure.CrossCutting.Abstractions;
 
 namespace DDD.Infrastructure.CrossCutting.Serialisers
 {

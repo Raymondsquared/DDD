@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace DDD.Application.Services.Abstractions
+namespace DDD.Application.Abstractions
 {
     public interface IConsoleApplicationService : IApplicationService
     {

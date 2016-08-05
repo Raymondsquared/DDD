@@ -2,10 +2,10 @@
 using DDD.Domain.Model;
 using DDD.Domain.Model.DTOs;
 using DDD.Infrastructure.CrossCutting.Abstractions;
-using DDD.Infrastructure.CrossCutting.Mappers.Abstractions;
 using DDD.Infrastructure.CrossCutting.Mappers.Abstractions.DataSyncWorker.Mappers.Abstractions;
 using DDD.Infrastructure.CrossCutting.Mappers.Implementations.ClientUser;
 using DDD.Infrastructure.CrossCutting.Mappers.Implementations.ClientUser.Resolvers;
+using DDD.Infrastructure.CrossCutting.Models;
 using DDD.Infrastructure.CrossCutting.Validators.Abstractions;
 using DDD.Infrastructure.CrossCutting.Validators.Implementations.Clients;
 using DDD.Infrastructure.CrossCutting.Validators.Implementations.Clients.Checkers;
@@ -28,15 +28,25 @@ namespace DDD.Infrastructure.DependencyInjection
                 .As<IValidator<ClientDto>>();
 
             /* Mappers */
+            builder.RegisterType<IdResolver>()
+                .As<IMapperResolver<ClientDto, User>>();
             builder.RegisterType<FirstNameResolver>()
                 .As<IMapperResolver<ClientDto, User>>();
             builder.RegisterType<LastNameResolver>()
+                .As<IMapperResolver<ClientDto, User>>();
+            builder.RegisterType<ExternalIdResolver>()
                 .As<IMapperResolver<ClientDto, User>>();
 
             builder.RegisterType<ClientUserMapper>()
                 .As<IMapper<ClientDto, User>>();
 
             /* Repositories */
+            builder.RegisterType<MockLogRepository>()
+                .As<IRepository<Log>>();
+            
+            builder.RegisterType<MockClientRepository>()
+                .As<IRepository<ClientDto>>();
+
             builder.RegisterType<MockUserRepository>()
                 .As<IRepository<User>>();
         }

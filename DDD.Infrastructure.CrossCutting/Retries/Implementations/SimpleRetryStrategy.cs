@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Threading.Tasks;
 using DDD.Infrastructure.CrossCutting.Delegates;
-using DDD.Infrastructure.CrossCutting.Models;
+using DDD.Infrastructure.CrossCutting.Models.Configurations;
 using DDD.Infrastructure.CrossCutting.Retries.Abstractions;
 
 namespace DDD.Infrastructure.CrossCutting.Retries.Implementations
 {
     public class SimpleRetryStrategy : IRetryStrategy
     {
-        private readonly RetryConfig _retryConfig;        
+        private readonly RetryConfiguration _retryConfig;        
 
-        public SimpleRetryStrategy(RetryConfig retryConfig)
+        public SimpleRetryStrategy(RetryConfiguration retryConfig)
         {
             _retryConfig = retryConfig;
         }

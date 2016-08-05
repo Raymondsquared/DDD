@@ -1,6 +1,6 @@
 ﻿using System;
 using Csn.Logging;
-using DDD.Infrastructure.CrossCutting.Interfaces;
+using DDD.Infrastructure.CrossCutting.Abstractions;
 
 namespace DDD.Infrastructure.CrossCutting.Helpers
 {

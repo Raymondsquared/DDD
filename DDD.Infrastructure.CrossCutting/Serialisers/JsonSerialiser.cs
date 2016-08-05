@@ -1,4 +1,4 @@
-﻿using DDD.Infrastructure.CrossCutting.Interfaces;
+﻿using DDD.Infrastructure.CrossCutting.Abstractions;
 using Newtonsoft.Json;
 
 namespace DDD.Infrastructure.CrossCutting.Serialisers

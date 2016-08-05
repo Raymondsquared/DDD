@@ -1,4 +1,4 @@
-﻿namespace DDD.Infrastructure.CrossCutting.Validators.Abstractions
+﻿namespace DDD.Infrastructure.CrossCutting.Abstractions
 {
     public interface IValidator<in T>
     {

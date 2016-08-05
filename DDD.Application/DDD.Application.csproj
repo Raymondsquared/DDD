@@ -41,13 +41,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\Abstractions\IConsoleApplicationService.cs" />
-    <Compile Include="Services\Abstractions\IApplicationService.cs" />
-    <Compile Include="Services\Implementations\ConsoleApplicationService.cs" />
+    <Compile Include="Abstractions\IConsoleApplicationService.cs" />
+    <Compile Include="Abstractions\IApplicationService.cs" />
+    <Compile Include="Implementation\ConsoleApplicationService.cs" />
+    <Compile Include="Services\Abstractions\ILogService.cs" />
+    <Compile Include="Services\Implementations\LogService.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Abstractions\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\DDD.Domain.Model\DDD.Domain.Model.csproj">
       <Project>{45A57709-D1C3-40B2-A49B-25F334130838}</Project>

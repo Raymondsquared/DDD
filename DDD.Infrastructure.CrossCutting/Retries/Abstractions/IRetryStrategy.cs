@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using DDD.Infrastructure.CrossCutting.Delegates;
 
 namespace DDD.Infrastructure.CrossCutting.Retries.Abstractions

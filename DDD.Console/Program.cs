@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using DDD.Application.Services.Abstractions;
+using DDD.Application.Abstractions;
 using DDD.Infrastructure.DependencyInjection;
 
 namespace DDD.Console

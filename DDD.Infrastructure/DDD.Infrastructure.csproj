@@ -40,7 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstractions\IClientRepository.cs" />
+    <Compile Include="Abstractions\ILogRepository.cs" />
     <Compile Include="Abstractions\IUserRepository.cs" />
+    <Compile Include="Mock\MockClientRepository.cs" />
+    <Compile Include="Mock\MockLogRepository.cs" />
     <Compile Include="Mock\MockUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
