@@ -1,7 +1,6 @@
 ﻿using Autofac;
 using DDD.Domain.Model;
 using DDD.Domain.Model.DTOs;
-using DDD.Infrastructure.Bus;
 using DDD.Infrastructure.CrossCutting.Abstractions;
 using DDD.Infrastructure.CrossCutting.Mappers.Abstractions.DataSyncWorker.Mappers.Abstractions;
 using DDD.Infrastructure.CrossCutting.Mappers.Implementations.ClientUser;
@@ -10,6 +9,7 @@ using DDD.Infrastructure.CrossCutting.Models;
 using DDD.Infrastructure.CrossCutting.Validators.Abstractions;
 using DDD.Infrastructure.CrossCutting.Validators.Implementations.Clients;
 using DDD.Infrastructure.CrossCutting.Validators.Implementations.Clients.Checkers;
+using DDD.Infrastructure.Integrations;
 using DDD.Infrastructure.Mock;
 
 namespace DDD.Infrastructure.DependencyInjection
@@ -41,7 +41,7 @@ namespace DDD.Infrastructure.DependencyInjection
                 .As<IMapper<ClientDto, User>>();
 
             /* Bus */
-            builder.RegisterType<MessagingQueue>()
+            builder.RegisterType<InMemoryQueue>()
                 .As<IIntegrationStrategy>()
                 .SingleInstance();
 

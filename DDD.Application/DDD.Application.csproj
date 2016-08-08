@@ -40,10 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implementation\ConsoleQueryApplicationService.cs" />
+    <Compile Include="Implementation\ConsoleIntegrationApplicationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Abstractions\IConsoleApplicationService.cs" />
     <Compile Include="Abstractions\IApplicationService.cs" />
-    <Compile Include="Implementation\ConsoleApplicationService.cs" />
+    <Compile Include="Implementation\ConsoleSynchroniseApplicationService.cs" />
     <Compile Include="Services\Abstractions\ILogService.cs" />
     <Compile Include="Services\Implementations\LogService.cs" />
   </ItemGroup>
@@ -52,6 +54,10 @@
     <ProjectReference Include="..\DDD.Domain.Model\DDD.Domain.Model.csproj">
       <Project>{45A57709-D1C3-40B2-A49B-25F334130838}</Project>
       <Name>DDD.Domain.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDD.Domain.Service\DDD.Domain.Service.csproj">
+      <Project>{F5838502-A6D5-406A-BA4A-226B9CA32EF5}</Project>
+      <Name>DDD.Domain.Service</Name>
     </ProjectReference>
     <ProjectReference Include="..\DDD.Infrastructure.CrossCutting\DDD.Infrastructure.CrossCutting.csproj">
       <Project>{B4BB715E-5CEE-468F-85CD-56F0A62ACA35}</Project>

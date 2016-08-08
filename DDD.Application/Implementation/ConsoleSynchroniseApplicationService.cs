@@ -7,6 +7,7 @@ using DDD.Application.Abstractions;
 using DDD.Application.Services.Abstractions;
 using DDD.Domain.Model;
 using DDD.Domain.Model.DTOs;
+using DDD.Domain.Service.Abstractions;
 using DDD.Infrastructure.CrossCutting.Abstractions;
 using DDD.Infrastructure.CrossCutting.Delegates;
 using DDD.Infrastructure.CrossCutting.Extensions;
@@ -15,7 +16,7 @@ using DDD.Infrastructure.CrossCutting.Models.Configurations;
 
 namespace DDD.Application.Implementation
 {
-    public class ConsoleApplicationService : IConsoleApplicationService
+    public class ConsoleSynchroniseApplicationService : IConsoleApplicationService
     {
         private readonly BatchConfiguration _batchConfig;
 
@@ -23,20 +24,20 @@ namespace DDD.Application.Implementation
 
         private readonly ILogService _logService;
         private readonly IDomainService<ClientDto> _clientService;
-        private readonly IDomainService<User> _userService;
+        private readonly IUserService _userService;
 
         private readonly IValidator<ClientDto> _clientValidator;
         private readonly IMapper<ClientDto, User> _userMapper;
         
 
-        public ConsoleApplicationService (
+        public ConsoleSynchroniseApplicationService(
             BatchConfiguration batchConfig,
             IRetryStrategy retryStrategy,
             IValidator<ClientDto> clientValidator,
             IMapper<ClientDto, User> userMapper,
             ILogService logService,
             IDomainService<ClientDto> clientService,
-            IDomainService<User> userService
+            IUserService userService
         )
         {
             _batchConfig = batchConfig;
@@ -131,7 +132,19 @@ namespace DDD.Application.Implementation
             if (users.Any())
             {
                 await _userService.PostManyAsync(users);
-            }            
+            }
+
+            //CQRS
+            foreach (var user in users)
+            {
+                var newUser = new User
+                {
+                    FirstName = user.FirstName,
+                    LastName = "From CQRS"
+                };
+
+                await _userService.CommandAddUser(newUser);
+            }
         }
     }
 }

@@ -4,7 +4,7 @@ namespace DDD.Infrastructure.CrossCutting.Abstractions
 {
     public interface IIntegrationStrategy
     {
-        Task Add(object input);
-        Task<object> Take();
+        Task AddAsync(object input);
+        Task<object> TakeAsync();
     }
 }

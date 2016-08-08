@@ -43,15 +43,14 @@ namespace DDD.Domain.Service.Implementations
             await _userRepository.InsertAsync(input);
         }
 
-        public async Task CreateUserCqrs(User input)
+        public async Task CommandAddUser(User input)
         {
-            await _integrationStrategy.Add(input);
-            //await _userRepository.InsertAsync(input);
+            await _integrationStrategy.AddAsync(input);
         }
 
-        public async Task<bool> CheckIfUserExistCqrs(long id)
+        public async Task<User> QueryUser(long id)
         {
-            return await _userRepository.SelectAsync(id) != null;
+            return await _userRepository.SelectAsync(id);
         }
     }
 }

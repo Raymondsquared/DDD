@@ -32,7 +32,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Messaging" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,7 +43,7 @@
     <Compile Include="Abstractions\IClientRepository.cs" />
     <Compile Include="Abstractions\ILogRepository.cs" />
     <Compile Include="Abstractions\IUserRepository.cs" />
-    <Compile Include="Bus\MessagingQueue.cs" />
+    <Compile Include="Integrations\InMemoryQueue.cs" />
     <Compile Include="Mock\MockClientRepository.cs" />
     <Compile Include="Mock\MockLogRepository.cs" />
     <Compile Include="Mock\MockUserRepository.cs" />

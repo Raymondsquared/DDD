@@ -23,12 +23,20 @@ namespace DDD.Infrastructure.Mock
 
         public async Task<User> SelectAsync(long id)
         {
-            return _collection.LastOrDefault();
+            try
+            {
+                return _collection.First( u => u.Id == id);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         public async Task InsertAsync(User input)
         {
-            _collection.Add(input);
+            if(_collection.All(u => u.Id != input.Id))
+                _collection.Add(input);
         }
 
         public async Task InsertManyAsync(IEnumerable<User> inputCollection)
@@ -48,7 +56,7 @@ namespace DDD.Infrastructure.Mock
 
             foreach (var input in inputCollection)
             {
-                _collection.Add(input);
+                await InsertAsync(input);
             }
         }
 

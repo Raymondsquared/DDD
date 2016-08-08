@@ -6,8 +6,8 @@ namespace DDD.Domain.Service.Abstractions
 {
     public interface IUserService : IDomainService<User>
     {
-        Task CreateUserCqrs(User input);
-        Task<bool> CheckIfUserExistCqrs(long id);
+        Task CommandAddUser(User input);
+        Task<User> QueryUser(long id);
 
     }
 }

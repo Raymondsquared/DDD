@@ -40,12 +40,21 @@ namespace DDD.Infrastructure.DependencyInjection
                 .As<ILogService>();
             
             /* Console Application */
-            builder.RegisterType<ConsoleApplicationService>()
+            builder.RegisterType<ConsoleSynchroniseApplicationService>()
                 .As<IConsoleApplicationService>()
+                .Keyed<IConsoleApplicationService>("synchronise")
                 .WithParameter(
                     new ResolvedParameter(
                         (pi, ctx) => pi.ParameterType == typeof(IRetryStrategy),
                         (pi, ctx) => ctx.ResolveKeyed<IRetryStrategy>("simple")));
+
+            builder.RegisterType<ConsoleIntegrationApplicationService>()
+                .As<IConsoleApplicationService>()
+                .Keyed<IConsoleApplicationService>("integration");
+
+            builder.RegisterType<ConsoleQueryApplicationService>()
+                .As<IConsoleApplicationService>()
+                .Keyed<IConsoleApplicationService>("query");
         }
     }
 }
