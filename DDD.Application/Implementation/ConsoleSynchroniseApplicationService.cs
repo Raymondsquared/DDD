@@ -143,6 +143,7 @@ namespace DDD.Application.Implementation
                     LastName = "From CQRS"
                 };
 
+                Task.Delay(10000).Wait();
                 await _userService.CommandAddUser(newUser);
             }
         }

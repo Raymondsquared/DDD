@@ -16,23 +16,23 @@ namespace DDD.Console
             builder.RegisterModule<MainModule>();
             IContainer container = builder.Build();
 
-            /* Application */
-            System.Console.WriteLine("\n Running Syncronisation Process : \n");
-            var syncApp = container.ResolveKeyed<IConsoleApplicationService>("synchronise");
-            syncApp.RunWithRetryAsync().Wait();
-
+            /* Application */            
             Parallel.Invoke(
                 () => {
-                    System.Console.WriteLine("\n Running Integration Process : \n");
+                    System.Console.WriteLine("Running Syncronisation Process ...");
+                    var syncApp = container.ResolveKeyed<IConsoleApplicationService>("synchronise");
+                    syncApp.RunWithRetryAsync().Wait();
+                },
+                () => {
+                    System.Console.WriteLine("Running Integration Process : ...");
                     var integrationApp = container.ResolveKeyed<IConsoleApplicationService>("integration");
                     integrationApp.RunWithRetryAsync().Wait();
                 },
                 () => {
-                    System.Console.WriteLine("\n Running Query Process : \n");
+                    System.Console.WriteLine("Running Query Process : ...");
                     var queryApp = container.ResolveKeyed<IConsoleApplicationService>("query");
                     queryApp.RunWithRetryAsync().Wait();
-                }
-            );
+                });
         }
     }
 }

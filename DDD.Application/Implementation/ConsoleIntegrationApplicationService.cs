@@ -26,15 +26,17 @@ namespace DDD.Application.Implementation
 
         public async Task RunWithRetryAsync()
         {
-            var item = await _integrationStrategy.TakeAsync();            
-            while (item != null)
+            await Task.Run(async () =>
             {
-                await Process(item);
-                item = await _integrationStrategy.TakeAsync();
-            }
-            
-            // Test
-            var userTest = _userService.GetAllAsync();
+                while (true)
+                {
+                    var item = await _integrationStrategy.TakeAsync();
+                    if (item != null)
+                    {
+                        await Process(item);
+                    }
+                }
+            });                            
         }
 
         private async Task Process(object item)
@@ -45,10 +47,7 @@ namespace DDD.Application.Implementation
                 user.Id = NewId++;
 
                 //process
-                Console.WriteLine($"integration processing {user.Id} - {user.NickName}");
-
-                //Purposely delay 5 sec for every add
-                Task.Delay(5000).Wait();
+                Console.WriteLine($"integration processing {user.Id} - {user.NickName}");                
                 await _userService.PostAsync(user);
             }
         }
